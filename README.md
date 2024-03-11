@@ -1,4 +1,8 @@
-# BanPlayer
+# BanPlayer By NanHai
+
+## 简介
+
+折磨违反规定的玩家喵 有更多的折磨方法可以提喵
 
 ## 待实现的功能
 
