@@ -1,5 +1,8 @@
 # BanPlayer By NanHai
 
+## 协作
+sweets0v0
+
 ## 简介
 
 折磨违反规定的玩家喵 有更多的折磨方法可以提喵
