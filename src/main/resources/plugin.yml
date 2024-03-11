@@ -1,0 +1,24 @@
+name: BanPlayer
+version: '${project.version}'
+main: org.nanhai57501.banplayer.BanPlayer
+api-version: '1.20'
+commands:
+  banMenu:
+    description: "Open a GUI"
+    usage: "/banMenu"
+    aliases:
+      - bm
+    permission: banplayer.command.Guest
+  banadmin:
+    description: "admin"
+    usage: "/banadmin"
+    aliases:
+      - ba
+    permission: banplayer.command.Admin
+permissions:
+    banplayer.command.Guest:
+        description: "banplayer.command.Guest"
+        default: true
+    banplayer.command.Admin:
+        description: "banplayer.command.Admin"
+        default: op
