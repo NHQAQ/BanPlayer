@@ -2,6 +2,7 @@ name: BanPlayer
 version: '${project.version}'
 main: org.nanhai57501.banplayer.BanPlayer
 api-version: '1.20'
+#folia-supported: true
 commands:
   banMenu:
     description: "Open a GUI"
