@@ -6,7 +6,7 @@
 
     <groupId>org.nanhai57501</groupId>
     <artifactId>BanPlayer</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>BanPlayer</name>
