@@ -1,5 +1,6 @@
 package org.nanhai57501.banplayer;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.nanhai57501.banplayer.commands.AdminCommand;
 import org.nanhai57501.banplayer.commands.GuestCommand;
@@ -14,6 +15,7 @@ public final class BanPlayer extends JavaPlugin {
     public static Data data;
     public static GUIs guis;
     public static Logger logger;
+    public static File file;
 
     //instance
     public static BanPlayer getInstance() {
@@ -28,7 +30,17 @@ public final class BanPlayer extends JavaPlugin {
         if (!(getDataFolder().exists())) {
             getDataFolder().mkdir();
         }
-        new File(getDataFolder(),"players").mkdir();
+        File file = new File(getDataFolder(), "players");
+        file.mkdir();
+        new File(file.getPath(), "online").mkdir(); //正版
+        new File(file.getPath(), "offline").mkdir();//离线
+        if (Bukkit.getOnlineMode()) {
+            //正版
+            this.file = new File(getDataFolder() + "/players/online");
+        } else {
+            //离线
+            this.file = new File(getDataFolder() + "/players/offline");
+        }
         data = new Data();
         guis = new GUIs();
         getServer().getPluginManager().registerEvents(new GuiListener(), this);
@@ -37,6 +49,8 @@ public final class BanPlayer extends JavaPlugin {
         getCommand("banMenu").setExecutor(new GuestCommand());
         getCommand("banadmin").setExecutor(new AdminCommand());
         logger.info("BanPlayer 成功喵");
+
+        Bukkit.getOnlineMode();
     }
 
     @Override

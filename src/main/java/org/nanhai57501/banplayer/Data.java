@@ -36,7 +36,8 @@ public class Data {
 
     public void update() { //读取所有数据 也可以是在数据被更改后重新读取
         List<JsonObject> data = new ArrayList<>();
-        File file = new File(BanPlayer.getInstance().getDataFolder() + "/players");
+//        File file = new File(BanPlayer.getInstance().getDataFolder() + "/players");
+        File file = BanPlayer.file;
         File[] files = file.listFiles(); //已经存在的数据
 //        for (File file1 : files) {
 //            BanPlayer.logger.info(file1.getPath());
@@ -65,7 +66,8 @@ public class Data {
 
     class IO {
         public File getPlayerFile(String uuid) {
-            File file = new File(BanPlayer.getInstance().getDataFolder() + "/players", uuid + ".data");
+//            File file = new File(BanPlayer.getInstance().getDataFolder() + "/players", uuid + ".data");
+            File file = new File(BanPlayer.file.getPath(), uuid + ".data");
             if (!file.exists()) {
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.add("data", new JsonObject());

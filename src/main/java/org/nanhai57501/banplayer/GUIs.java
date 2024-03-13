@@ -48,9 +48,10 @@ public class GUIs {
             skull.setAmount(1);
             inv.setItem(index++, skull);
 
-            if (index % 45 == 0) {
+            if (index == 0) {
                 Menus.add(inv);
                 inv = banMenu(owner);
+                index = 0;
             }
         }
         if (Menus.isEmpty()) {
@@ -78,9 +79,10 @@ public class GUIs {
                 inv.setItem(index++, skull);
             }
 
-            if (index % 45 == 0) {
+            if (index == 45) {
                 histories.add(inv);
                 inv = history(owner);
+                index = 0;
             }
         }
         if (histories.isEmpty()) {

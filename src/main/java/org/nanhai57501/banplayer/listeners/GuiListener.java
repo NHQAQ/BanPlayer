@@ -48,6 +48,7 @@ public class GuiListener implements Listener {
                 case "Histories":
                     owner.closeInventory();
                     setInv_history(owner);
+                    owner.removeMetadata(Keys.INV_BAN_MENU, BanPlayer.getInstance());
                     owner.openInventory(inv_open_now.get(0));
                     owner.setMetadata(Keys.INV_HISTORY, new FixedMetadataValue(BanPlayer.getInstance(), Keys.INV_HISTORY));
                     break;
